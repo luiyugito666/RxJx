@@ -3,14 +3,6 @@
 import { distinct, distinctUntilChanged, distinctUntilKeyChanged, from, of } from "rxjs";
 
 
-const numeros$ = of(1, 1, 2,1, '1', 5,5,3,5)
-
-numeros$.pipe(
-  distinctUntilChanged()
-)
-  .subscribe(console.log
-  
-)
 
 
 interface Personaje { 

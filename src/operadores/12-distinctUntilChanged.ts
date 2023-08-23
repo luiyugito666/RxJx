@@ -1,6 +1,6 @@
-//distinctUntilKeyChanged:emite valores, siempre cuando la emision anterior no sea la misma, pero esta pendiente de la propiedad y el valor
+//distinctUntilChanged:emite valores, siempre cuando la eemision anterior no sea la misma
 
-import { distinct, distinctUntilChanged, distinctUntilKeyChanged, from, of } from "rxjs";
+import { distinct, distinctUntilChanged, from, of } from "rxjs";
 
 
 const numeros$ = of(1, 1, 2,1, '1', 5,5,3,5)
@@ -33,5 +33,5 @@ const personaje: Personaje[] = [
 
 const person$ = from(personaje).pipe(
   //cuando los argumentos nos son primitivos, entonces toca trabajar con sus propiedades, por ello en el argumento se le debe poner la condicion comparando el valor anterior con actual, si la condicion es true, entonces no dejara pasar el valor
-  distinctUntilKeyChanged('nombre')
+  distinctUntilChanged((ant,act)=>ant.nombre===act.nombre)
 ).subscribe(console.log)
