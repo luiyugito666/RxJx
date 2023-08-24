@@ -14,6 +14,7 @@ const saludar = () => console.log('hola mundo');
 const saludar2 = val => console.log(`hola ${val}`);
 /* asyncScheduler.schedule(saludar, 2000);
 asyncScheduler.schedule(saludar2, 2000,'luis'); */
+/*el tercer argumento es un estado, pero debe ser solo un argumento*/
 
 const subs= asyncScheduler.schedule(function (state) { 
   console.log('state', state);
@@ -28,6 +29,8 @@ const subs= asyncScheduler.schedule(function (state) {
 },6000) */
 
 //ahora utilizamos asyncSchudeler para cancelar la subscripcion
-asyncScheduler.schedule(()=>subs.unsubscribe(),6000)
+asyncScheduler.schedule(
+  () => subs.unsubscribe()
+  , 6000);
 
 
