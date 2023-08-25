@@ -1,5 +1,5 @@
 
-//throttleTime - emite el primer valor cada intervalo de tiempo, pero tambien se puede conficurar para que capture el primer valor y ultimo valor throttleTime(1000, asyncScheduler, { leading: true,    trailing:true  })
+//throttleTime - emite el primer valor cada intervalo de tiempo, pero tambien se puede configurar para que capture el primer valor y ultimo valor throttleTime(1000, asyncScheduler, { leading: true,    trailing:true  })
 import { asyncScheduler, debounceTime, distinctUntilChanged, fromEvent, map, pluck, tap, throttleTime } from 'rxjs';
 
 
